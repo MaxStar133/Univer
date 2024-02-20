@@ -1,0 +1,8 @@
+C:\Users\ov4in\source\repos\Project13\Project13\x64\Debug\Project13.vcxproj.AssemblyReference.cache
+C:\Users\ov4in\source\repos\Project13\Project13\x64\Debug\Project13.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\ov4in\source\repos\Project13\Project13\x64\Debug\Project13.MyForm.resources
+C:\Users\ov4in\source\repos\Project13\Project13\x64\Debug\Project13.vcxproj.GenerateResource.cache
+C:\Users\ov4in\OneDrive\Рабочий стол\Универ\Теория автоматов\Project13\Project13\x64\Debug\Project13.vcxproj.AssemblyReference.cache
+C:\Users\ov4in\OneDrive\Рабочий стол\Универ\Теория автоматов\Project13\Project13\x64\Debug\Project13.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\ov4in\OneDrive\Рабочий стол\Универ\Теория автоматов\Project13\Project13\x64\Debug\Project13.MyForm.resources
+C:\Users\ov4in\OneDrive\Рабочий стол\Универ\Теория автоматов\Project13\Project13\x64\Debug\Project13.vcxproj.GenerateResource.cache

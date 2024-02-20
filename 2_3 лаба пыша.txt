@@ -1,0 +1,135 @@
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <time.h>
+
+
+using namespace std;
+
+
+struct Node {
+	int data;
+	Node* left, * right;
+};
+
+
+
+void add(int x, Node*& node) {
+
+    if (node == NULL) {
+        node = new Node;
+        node->data = x;
+        node->left = NULL;
+        node->right = NULL;
+    }
+    else {
+        int b = rand() % 2;
+        if (b == 0) add(x, node->left);
+        else add(x, node->right);
+    }
+}
+
+void createTree(Node*& root) {
+
+	int capacity = 15;
+	for (int i = 0; i < capacity; ++i) {
+        int value = rand() % 20;
+		add(value, root);
+	}
+}
+
+
+// Обход дерева прямым способом
+void prePrint(Node* node) {
+	if (node != NULL) {
+		cout << node->data << " ";
+		prePrint(node->left);
+		prePrint(node->right);
+	}
+}
+
+// Обход дерева симметричным способом 
+void inPrint(Node* node) {
+	if (node != NULL) {
+		inPrint(node->left);
+		cout << node->data << " ";
+		inPrint(node->right);
+	}
+}
+// Обход дерева обратным способом 
+void postPrint(Node* node) {
+	if (node != NULL) {
+		postPrint(node->left);
+		postPrint(node->right);
+		cout << node->data << " ";
+	}
+}
+void findMaxFrequencyElement(Node* root, int& maxFreq, int& mostFreqElement, int& currentFreq, int& currentElement, bool& multipleMaxFreq) {
+    if (root != nullptr) {
+
+        if (root->data == currentElement) {
+            currentFreq++;
+        }
+          findMaxFrequencyElement(root->left, maxFreq, mostFreqElement, currentFreq, currentElement, multipleMaxFreq);
+        findMaxFrequencyElement(root->right, maxFreq, mostFreqElement, currentFreq, currentElement, multipleMaxFreq);
+    }
+}
+
+void countFrequency(Node* root, int& maxFreq, int& mostFreqElement, bool& multipleMaxFreq) {
+    if (root != nullptr) {
+        int currentFreq = 1;
+        findMaxFrequencyElement(root, maxFreq, mostFreqElement, currentFreq, root->data, multipleMaxFreq);
+        if (currentFreq > maxFreq) {
+            maxFreq = currentFreq;
+            mostFreqElement = root->data;
+        }
+        else if (currentFreq == maxFreq) {
+            multipleMaxFreq = true;
+        }
+
+        countFrequency(root->left, maxFreq, mostFreqElement, multipleMaxFreq);
+        countFrequency(root->right, maxFreq, mostFreqElement, multipleMaxFreq);
+    }
+}
+
+int Search(Node* root) {
+    int maxFreq = 0;
+    int mostFreqElement = -1;
+    bool multipleMaxFreq  = false;
+    countFrequency(root, maxFreq, mostFreqElement, multipleMaxFreq);
+    if (multipleMaxFreq) {
+        return -1;
+    }
+    return mostFreqElement;
+}
+
+int main() {
+    srand(time(NULL));
+
+    Node* root = NULL;
+    createTree(root);   
+    cout << "prePrint" << endl;
+    prePrint(root);
+    cout << endl;
+
+    cout << "inPrint" << endl;
+    inPrint(root);
+    cout << endl;
+
+
+    cout << "postPrint" << endl;
+    postPrint(root);
+    cout << endl;
+
+    int mostFrequent = Search(root);
+
+    if (mostFrequent == -1) {
+        cout << "No single most frequently occurring element." << endl;
+    }
+    else {
+        cout << "The frequently occurring element is: " << mostFrequent << endl;
+    }
+
+    system("pause");
+    return 0;
+}

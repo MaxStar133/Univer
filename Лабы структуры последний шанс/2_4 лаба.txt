@@ -1,0 +1,131 @@
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <time.h>
+#include <set>
+
+using namespace std;
+
+
+struct Node {
+    int data;
+    Node* left, * right;
+};
+
+
+
+void add(int x, Node*& node) {
+
+    if (node == NULL) {
+        node = new Node;
+        node->data = x;
+        node->left = NULL;
+        node->right = NULL;
+    }
+    else {
+        int b = rand() % 2;
+        if (b == 0) add(x, node->left);
+        else add(x, node->right);
+    }
+}
+
+void createTree(Node*& root) {
+
+    int capacity = 15;
+    for (int i = 0; i < capacity; ++i) {
+        int value = -(rand() % 20);
+        add(value, root);
+    }
+}
+
+
+// Обход дерева прямым способом
+void prePrint(Node* node) {
+    if (node != NULL) {
+        cout << node->data << " ";
+        prePrint(node->left);
+        prePrint(node->right);
+    }
+}
+
+// Обход дерева симметричным способом 
+void inPrint(Node* node) {
+    if (node != NULL) {
+        inPrint(node->left);
+        cout << node->data << " ";
+        inPrint(node->right);
+    }
+}
+// Обход дерева обратным способом 
+void postPrint(Node* node) {
+    if (node != NULL) {
+        postPrint(node->left);
+        postPrint(node->right);
+        cout << node->data << " ";
+    }
+}
+void FindMost(const Node* root, int& maxCount, int& mostFrequent, int& currentCount, multiset <int>& count, bool& multipleMaxFreq)
+{
+    if (!root)
+    {
+        return;
+    }
+    FindMost(root->left, maxCount, mostFrequent, currentCount, count,  multipleMaxFreq);
+
+    currentCount = root->data;
+    count.insert(currentCount);
+    int x = count.count(currentCount);
+    if (x > maxCount)
+    {
+        maxCount = x;
+        mostFrequent = currentCount;
+        multipleMaxFreq = false;
+    }
+     else if (x==maxCount)
+        multipleMaxFreq = true;
+    FindMost(root->right, maxCount, mostFrequent, currentCount, count,  multipleMaxFreq);
+}
+
+int Search(Node* root) {
+    int currentCount = 0;
+    int maxCount = 0;
+    int mostFrequent = -1;
+    bool multipleMaxFreq = false;
+    multiset <int> count;
+    FindMost(root, maxCount, mostFrequent, currentCount, count, multipleMaxFreq) ;
+    if (multipleMaxFreq) {
+        return -1;
+    }
+    return mostFrequent;
+}
+
+int main() {
+    srand(time(NULL));
+
+    Node* root = NULL;
+    createTree(root);
+    cout << "prePrint" << endl;
+    prePrint(root);
+    cout << endl;
+
+    cout << "inPrint" << endl;
+    inPrint(root);
+    cout << endl;
+
+
+    cout << "postPrint" << endl;
+    postPrint(root);
+    cout << endl;
+
+    int mostFrequent = Search(root);
+
+    if (mostFrequent == -1) {
+        cout << "No single most frequently occurring element." << endl;
+    }
+    else {
+        cout << "The frequently occurring element is: " << mostFrequent << endl;
+    }
+
+    system("pause");
+    return 0;
+}

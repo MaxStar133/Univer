@@ -1,0 +1,89 @@
+<html>
+<head>
+<style>
+body {
+	background-image: url("дlен4ик.jpg");
+  	background-color: black;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: center;
+	margin:0;
+	cursor: default;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+nav {
+  width:1280px;
+  margin: 0 auto;
+}
+nav:before{
+  content:''; 
+  display:block;
+  min-height:75px;
+  width:100%;
+  background:#000;
+  position:absolute;
+  left:0;
+  z-index:-1;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  min-height:75px;
+}
+
+ul li{
+  float:left;
+}
+
+ul li a{
+  color:#fff;
+  display:block;
+  min-height:75px;
+  padding:0 30px;
+  text-transform:uppercase;
+  text-decoration:none;
+  line-height:75px;
+  transition:  background 0.3s ease-out;
+  font-size:1vw;
+}
+
+ul li a:hover{
+  background: rgba(128, 128, 128, 0.5);
+}
+
+.box {
+	background-image: url("Comp.jpg");
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+	width:100%;
+	min-height: 80%;
+	overlay: hidden;
+	position: absolute;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="Site.html">На главную</a></li>
+    <li><a href="">Рейтинг по городу</a></li>
+    <li><a href="">Фелиалы на карте</a></li>
+    <li><a href="">Рейтинг по стране</a></li>
+  <ul>
+<nav>	
+
+<div class="box"></div>
+
+</body>
+</html>

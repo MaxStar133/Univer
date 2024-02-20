@@ -1,0 +1,207 @@
+<html>
+<head>
+ <title> Технологии и инструменты  </title>
+<style>
+html {
+	scroll-behavior: smooth;
+}
+body {
+    background-image: url("fon.jpg");
+      background-color: white;
+    background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    margin:0;
+    cursor: default;
+}
+nav {
+  width:1280px;
+  margin: 0 auto;
+}
+nav:before{
+  content:''; 
+  display:block;
+  min-height:75px;
+  width:100%;
+  background:black;
+  position:absolute;
+  left:0;
+  z-index:-1;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  min-height:75px;
+}
+
+ul li{
+  float:left;
+}
+
+ul li a{
+  color:#fff;
+  display:block;
+ 
+  min-height:75px;
+  padding:0 30px;
+  text-transform:uppercase;
+  text-decoration:none;
+  line-height:75px;
+  transition:  background 0.3s ease-out;
+  font-size:1vw;
+}
+
+ul li a:hover{
+  background: rgba(201, 82, 2, 0.9);  
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+.box_shapka{
+	background-color: #282828;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+	width:100%;
+	min-height: 8%;
+}
+.box {
+    background-image: url("background1.jpg");
+    background-position: center;
+      background-attachment: fixed;
+	background-repeat: no-repeat;
+      
+    width:100%;
+    min-height: 50%;
+    overlay: hidden;
+}
+.kol {
+	background-color: #282828;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+	justify-content: center;
+	position:  relative;
+	width:100%;
+	height: 13%;
+	bottom: 0px;
+	left: 0%;
+}
+.centered {
+	position: absolute;
+    	top: 30%;
+    	left: 40%;
+    	transform: translate(-50%, -50%);
+	color: white;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+}
+.box_text{
+	width: 60%;
+  	height: 50%;
+  	margin: 15px;
+  	padding: 30px;
+  	
+}
+text {
+	position: relative;
+	color: black;
+	font-size:1vw;
+	font-family: Arial;
+}
+text_kol{position: relative;
+	text-align: center;
+	top: 40%;
+	color: white;
+	font-size:1vw;
+}
+.scroll {
+	height: 360px;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.down {
+	background: none;
+	border: 2px solid #40B7EE;
+	text-decoration: none;
+	color: #40B7EE;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 10px 45px; 
+	border-radius: 5px;
+	font-weight: bold;
+	transition: .4s;
+}
+
+.down:hover {
+	background: rgba(64, 183, 238, 0.9);
+	color: fff;
+}
+.bottom-left {
+   	position: relative;
+	left: 95%;
+   	bottom: 10px;
+	width: 5%;
+  	height: 5%;	
+}
+</style>
+</head>
+<body>
+<text id="block0"> </text>
+<div class="box_shapka">
+<nav>
+  <ul>
+    <li><a href="p1.html">История развития</a></li>
+    <li><a href="front.html">На главную</a></li>
+    <li><a href="p3.html">Образование и карьера</a></li>
+    <li><a href="p4.html">Новости и события</a></li>
+  <ul>
+<nav>	
+</div>
+<div class ="box">  <div class = "centered"> <p style="font-size:4.5vw; font-family:Roboto-Black;">Технологии <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; и инструменты</p> 
+<a href="#block1" class="down"> Подробнее </a>
+ </div></div>
+<div class="parent">
+<div class="box_text">
+<text id="block1"> 
+<h1> Российские IT-компании и их разработки.</h1>
+<p>  &nbsp;&nbsp;&nbsp;&nbsp; Россия сегодня активно развивает свою IT-индустрию и занимает прочные позиции на мировом рынке информационных технологий. Здесь процветают ряд ведущих компаний, которые создают инновационные решения и разработки в различных областях. В этой статье мы рассмотрим несколько заметных представителей российской IT-сферы и ознакомимся с их значимыми технологиями и инструментами.
+<br>
+<br>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;<strong>JetBrains</strong> (сайт) - один из ведущих мировых производителей средств разработки программного обеспечения для самых разных языков - Java, C#, .NET, Objective-C, Python, Ruby. Самые известные продукты - <em>IntelliJ IDEA, ReSharper, PhpStorm, WebStorm</em>. 15 мая 2013 года стало известно, что платформа IntelliJ выбрана <strong>Google</strong> в качестве основы для официальной среды разработки под Android - Android Studio. Среди клиентов компании - <strong>Valve, Samsung, Intel, Toyota, Twitter</strong>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Аскон</strong> - разрабатывает и внедряет комплексные решения для автоматизации инженерной деятельности и управления производством, в частности систему двух и трехмерного САПР <em>Компас</em>, ядро <em>C3D</em>, которое уже используется в стороннем продукте <em>ESPRIT Extra CAD</em>, также его лицензировал <em>Базис-Центр</em>, систему управления инженерными данными и жизненным циклом изделия <em>ЛОЦМАН:PLM</em>, комплексное решение для управления подготовкой производства автокомпонентов <em>QiBox</em>, систему управления производством <em>Гольфстрим</em> и многое другое.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Ngnix</strong> (сайт) - это не компания, это третий (по некоторым данным второй) в мире по популярности web-сервер, созданный российским разработчиком Игорем Сысоевым. Среди известных проектов, использующих nginx: <em>Rambler, Yandex, Mail.ru, Ukr.net, Begun, Wordpress.com, SourceForge.net, vk.com, Facebook, Groupon, Diary.ru, Rutracker.org</em>.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Вокорд</strong> - российский разработчик и производитель профессиональных систем видеонаблюдения и телекоммуникационных решений. Системы <em>VOCORD</em> работают более чем в 50 проектах класса &laquo;Безопасный город&raquo; в России и за рубежом. Примеры разработок: <em>VOCORD Traffic</em> - распознавание номеров и фотофиксация нарушений ПДД, <em>VOCORD Tahion</em> &mdash; система обзорного видеонаблюдения с функциями видеоаналитики, <em>VOCORD FaceControl 3D</em> - система некооперативного распознавания лиц на базе инновационной технологии 3D-машинного зрения, <em>VOCORD SMS Antifraud</em> &mdash; система обнаружения SMS-мошенничества и SMS-спама в сотовых сетях.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Сонда Технолоджи</strong> - занимается разработкой и внедрением биометрических систем. Системы &laquo;Сонда&raquo; успешно эксплуатируются во многих странах мира: России, Латвии, Молдавии, Украине, Узбекистане, Киргизии, Таджикистане, Сирии, Уругвае, Китае и других. Примеры продуктов: <em>Sonda RTI</em> - система оперативной идентификации для быстрого подтверждения или установления личности по отпечатку пальца, автоматизированная дактилоскопическая идентификационная система используется для создания и ведения электронной базы дактилокарт, следов пальцев и ладоней, изъятых с мест преступлений.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Прогноз</strong> (сайт) - российская компания, разрабатывающая системы визуализации данных и углубленной аналитики. Всего компанией реализовано более 1500 проектов для 350 заказчиков более чем в 70 странах мира. Основной продукт - <em>Prognoz Platform</em>. Среди клиентов - <em>Coca-Cola</em> (США), <em>Международный валютный фонд</em>, <em>Всемирная организация здравоохранения</em>, <em>Всемирный банк</em>, <em>Департамент сельского хозяйства США</em>, <em>3M</em> (США), <em>BAK BASEL Economics</em> (Швейцария), <em>Rhodia</em> (Франция), <em>Объединенный исследовательский центр при Еврокомиссии</em> (Испания), <em>Sudzucker</em> (Германия), <em>Организация экономического сотрудничества и развития</em> (Франция), <em>Banedanmark</em> (Дания), <em>Институт исследования топливно-энергетического комплекса при Правительстве КНР</em>, <em>Государственная электроэнергетическая корпорация Китая</em>, <em>Центр исследования развития экономики при Госсовете КНР</em>, <em>China Ocean Shipping Company</em> (Китай), <em>Abu Dhabi Terminals</em> (ОАЭ), а также государственные органы и частные компании из СНГ.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Лаборатория Касперского</strong> - известная всем компания, являющаяся одним из ведущих мировых разработчиков программного обеспечения для защиты информации от Интернет-угроз. <em>Лаборатория Касперского</em> является международной группой компаний, которая осуществляет свою деятельность в более чем 200 странах и территориях мира. Она имеет локальные представительства в 30 странах, а ее продукты и технологии используют более 300 миллионов конечных пользователей и более 250 тысяч корпоративных клиентов по всему миру. В 2012 году <em>Лаборатория Касперского</em> обнаружила американо-израильский вирус "Flame" на компьютерах в Ближнем Востоке. Программное ядро Антивируса Касперского используют такие разработчики, как Microsoft, Check Point Software Technologies, Juniper, Nokia ICG, F-Secure, Aladdin, Sybari, Deerfield, Alt-N, Microworld, BorderWare и другие.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Яндекс</strong> - российская компания, известная своим поисковым движком и другими Интернет-сервисами. Яндекс является одной из трех стран в мире, которые имеют собственный поиск в Интернете, наряду с США и Китаем. Компания разрабатывает собственный механизм поиска и не покупает лицензии на чужие поисковые системы. Это имеет важное значение для страны, так как обеспечивает независимость в области поисковых запросов государственных служащих, военных и бизнесменов. На 2011 год Яндекс занимал четвертое место в мире по объему поискового трафика после двух американских и одной китайской компании.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ВКонтакте</strong> - популярная социальная сеть в России, наряду с Одноклассниками. Одна из важных особенностей ВКонтакте заключается в том, что Россия, США и Китай являются немногими странами, которые имеют собственные социальные сети. Это означает, что огромный объем информации о людях не уходит к американским компаниям или правительству. ВКонтакте предоставляет возможность пользователям обмениваться сообщениями, делиться фотографиями и видео, прослушивать музыку, создавать группы и страницы, а также находить старых и новых друзей.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Модульные Системы Торнадо</strong> - это новосибирская компания, специализирующаяся на разработке и производстве автоматизированных систем управления, преимущественно для теплоэнергетической сферы. Компания полностью разрабатывает системы автоматизации управления тепловыми электростанциями (ТЭЦ) &mdash; от контроллеров до программно-технических комплексов. Она конкурирует с такими компаниями, как Siemens, ABB и другие. Модульные Системы Торнадо создают комплексные решения, микроконтроллеры и программное обеспечение. Компания успешно реализовала более 100 проектов внедрения полномасштабных систем автоматизации управления тепловыми электростанциями, включая проекты для ОАО ЭиЭ &laquo;Новосибирскэнерго&raquo;, ТЭС г. Костолац (Сербия) и ТЭС "Иминь" (Китай).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ОАО &laquo;ИнфоТеКС&raquo;</strong> - является лидером российского рынка программных решений для виртуальных частных сетей (VPN) и средств защиты информации в TCP/IP сетях на рабочих станциях, серверах и мобильных компьютерах.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>КриптоПро</strong> - ведущий разработчик в России средств криптографической защиты информации и электронной цифровой подписи. Компания предлагает широкий спектр продуктов и решений для обеспечения безопасности данных и электронных коммуникаций.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>SPIRIT</strong> - мировой лидер в области продуктов для передачи голоса и видео по IP-каналам. Их программный продукт, TeamSpirit&reg;Voice&amp;Video Engine, получил более 20 международных наград и широко используется в голосовых и видео приложениях. SPIRIT имеет представительства в нескольких странах и поставляет свои продукты на международный и российский рынки телекоммуникаций и Интернет-телефонии. Их программные движки встроены в известные продукты различных мировых производителей оборудования и программного обеспечения, таких как Apple, Adobe, Cisco, Microsoft, Samsung, Skype и многие другие.</p>
+</text>
+</div>
+</div>
+<div class="scroll"></div>
+<div class="bottom-left"> <a href="#block0"> <img src="up.png" border="0", width="35" hight="35"> </a></div>
+<div class="kol"> <text_kol style="left: 15%; "> Все права защищены ©️ 2023  <br>
+Подписаться на новости: <input type="email" id="email" name="email" placeholder="Введите email">
+<button type="submit"> <img src ="submit.png" alt="Отправить" width="15px" height="13px"> </button>
+ </text_kol> <text_kol style="left: 60%; "> 
+Контакты: +7(000)000-00-00 </text_kol> 
+ </div>
+</body>
+</html>

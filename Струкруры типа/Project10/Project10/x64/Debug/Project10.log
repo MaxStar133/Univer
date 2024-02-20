@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\ov4in\source\repos\Project10\Project10\Source.cpp(79,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\ov4in\source\repos\Project10\Project10\Source.cpp(119,24): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  Project10.vcxproj -> C:\Users\ov4in\source\repos\Project10\x64\Debug\Project10.exe

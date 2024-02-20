@@ -1,0 +1,149 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <windows.h>
+using namespace std;
+
+void setBlueTextAttribute() {
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(handle, FOREGROUND_INTENSITY | FOREGROUND_BLUE);
+}
+
+int main() {
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(handle, FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    setlocale(LC_ALL, "rus");
+    ifstream file("input.txt");
+    if (!file.is_open()) {
+        cout << "Unable to open file!" << endl;
+        return 1;
+    }
+
+    int N1, N2;
+    file >> N1 >> N2;
+
+
+    int** floor= new int* [N1];
+    for (int i = 0; i < N1; ++i) {
+        floor[i] = new int[N2];
+    }
+  
+
+    for (int i = 0; i < N1; ++i) {
+        for (int j = 0; j < N2; ++j) {
+            file >> floor[i][j];
+        }
+    }
+    file.close();
+
+ 
+         
+          
+    int** min = new int* [N1];
+    for (int i = 0; i < N1; ++i) {
+        min[i] = new int[N2];
+    }
+
+    for (int j = 0; j < N2; ++j) {
+        min[N1 - 1][j] = floor[N1 - 1][j];
+     
+    }
+
+    for (int i = N1 - 2; i >= 0; --i) {
+        for (int j = 0; j < N2; ++j) {
+            int down = (i < N1 - 2) ? min[i + 2][j] : INT_MAX;
+            int left_down = (i < N1 - 1 && j > 0) ? min[i + 1][j - 1] : INT_MAX;
+            int right_down = (i < N1 - 1 && j < N2 - 1) ? min[i + 1][j + 1] : INT_MAX;
+
+            int min_neighbor = min(down, min(left_down, right_down));
+
+            if (min_neighbor == down) {
+                min[i][j] = down + floor[i][j];
+               
+     
+            }
+            else if (min_neighbor == left_down) {
+                min[i][j] = left_down + floor[i][j];
+                
+            }
+            else {
+                min[i][j] = right_down + floor[i][j];
+
+            }
+        }
+    }
+
+    int minSum = min[0][0];
+    int endCol = 0;
+    for (int j = 1; j < N2; ++j) {
+        if (min[0][j] < minSum) {
+            minSum = min[0][j];
+            endCol = j;
+        }
+    }
+
+    int** dir = new int* [N1];
+    for (int i = 0; i < N1; ++i) {
+        dir[i] = new int[N2];
+    }
+
+    for (int i = 0; i < N1; ++i) {
+        for (int j = 0; j < N2; ++j) {
+                dir[i][j]=0;
+        }
+    }
+
+    int n1 = 0, n2 = endCol; // Начинаем снизу с финальной колонки
+    dir[n1][n2] = 1; // Помечаем начальную точку
+
+    while (n1 < N1 - 1) {
+        int down = (n1 < N1 - 2) ? min[n1 + 2][n2] : INT_MAX;
+        int left_down = (n2 > 0) ? min[n1 + 1][n2 - 1] : INT_MAX;
+        int right_down = (n2 < N2 - 1) ? min[n1 + 1][n2 + 1] : INT_MAX;
+
+        if (down < left_down && down < right_down) {
+            n1+=2;
+        }
+        else if (left_down < down && left_down < right_down) {
+            n1++;
+            n2--;
+        }
+        else if (right_down < down && right_down < left_down) {
+            n1++;
+            n2++;
+        }
+        else {
+            n1+=2; 
+        }
+
+        dir[n1][n2] = 1; 
+    }
+
+    
+
+    //вывод результатов с подсветочкой
+    for (int i = 0; i < N1; i++) {
+        for (int j = 0; j < N2; j++) {
+            setBlueTextAttribute();
+            if (dir[i][j] == 1) SetConsoleTextAttribute(handle, FOREGROUND_RED);
+            cout.width(4);
+            cout << floor[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    setBlueTextAttribute();
+    cout << "Минимальная сумма пути: " << minSum << endl;
+
+    for (int i = 0; i < N1; ++i) {
+        delete[] floor[i];
+        delete[] min[i];
+        delete[] dir[i];
+    }
+    delete[] floor;
+    delete[] min;
+    delete[] dir;
+
+
+    return 0;
+}

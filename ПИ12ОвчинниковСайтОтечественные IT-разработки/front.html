@@ -1,0 +1,258 @@
+<html>
+<head>
+    <title>   Главная  </title>
+<style>
+html {
+	scroll-behavior: smooth;
+}
+body {
+    background-image: url("fon.jpg");
+      background-color: white;
+    background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    margin:0; 
+    cursor: default;
+}
+nav {
+  width:1280px;
+  margin: 0 auto;
+}
+nav:before{
+  content:''; 
+  display:block;
+  min-height:75px;
+  width:100%;
+  background:black;
+  position:absolute;
+  left:0;
+  z-index:-1;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  min-height:75px;
+}
+
+ul li{
+  float:left;
+}
+
+ul li a{
+  color:#fff;
+  display:block;
+ 
+  min-height:75px;
+  padding:0 30px;
+  text-transform:uppercase;
+  text-decoration:none;
+  line-height:75px;
+  transition:  background 0.3s ease-out;
+  font-size:1vw;
+}
+
+ul li a:hover{
+  background: rgba(201, 82, 2, 0.9);  
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+.box_shapka{
+	background-color: #282828;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+	width:100%;
+	min-height: 8%;
+}
+.box {
+    background-image: url("background1.jpg");
+    background-position: center;
+      background-attachment: fixed;
+	background-repeat: no-repeat;
+      
+    width:100%;
+    min-height: 50%;
+    overlay: hidden;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+}
+.kol {
+	background-color: #282828;
+	background-position: center;
+  	background-attachment: fixed;
+  	background-size: cover;
+	justify-content: center;
+	position:  relative;
+	width:100%;
+	height: 13%;
+	bottom: 0px;
+	left: 0%;
+}
+.centered {
+	position: absolute;
+    	top: 30%;
+    	left: 40%;
+    	transform: translate(-50%, -50%);
+	color: white;
+}
+.box_text{
+	width: 90%;
+  	height: 50%;
+  	margin: 15px;
+  	padding: 30px;
+}
+
+
+text {
+	position: relative;
+	left: 10px;
+	text-align: rihgt;
+	color: black;
+	font-size:1.5vw;
+	font-family:Arial;
+}
+text_kol{position: relative;
+	text-align: center;
+	top: 40%;
+	color: white;
+	font-size:1vw;
+}
+.scroll {
+	height: 360px;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.down {
+	background: none;
+	border: 2px solid #40B7EE;
+	text-decoration: none;
+	color: #40B7EE;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 10px 45px; 
+	border-radius: 5px;
+	font-weight: bold;
+	transition: .4s;
+}
+
+.down:hover {
+	background: rgba(64, 183, 238, 0.9);
+	color: fff;
+}
+
+.bottom-left {
+   	position: relative;
+	left: 95%;
+   	bottom: 10px;
+	width: 5%;
+  	height: 5%;	
+}
+.wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 7%;
+	display: flex;
+		width: 70%;
+		justify-content: space-around;
+}
+.card{
+	cursor: default;
+	width: 2000px;
+	height: 360px;
+	padding: 2rem 1rem;
+	text-decoration: none;
+	background-image: url("card.jpg");
+	position: relative;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5) ;
+	transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+	transform: translateY(20px);
+}
+.card .info{
+	position: relative;
+	z-index: 3;
+	color:#fff;
+	font-size: 1vw;
+	text-shadow: 1px 1px 2px black;
+}
+</style>
+</head>
+<body>
+<text id="block0"> </text>
+<div class="box_shapka">
+<nav>
+  <ul>
+    <li><a href="p1.html">История развития</a></li>
+    <li><a href="p2.html">Технологии и инструменты</a></li>
+    <li><a href="p3.html">Образование и карьера</a></li>
+    <li><a href="p4.html">Новости и события</a></li>
+  <ul>
+<nav>	
+</div>
+
+<div class ="box">  <div class = "centered"> <p style="font-size:4.5vw; font-family:Times New Roman;">Отечественные <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IT-разработки</p> 
+<a href="#block1" class="down"> Подробнее </a>
+ </div></div>
+<div class="parent">
+<div class="box_text"><text id="block1"> <h3>&nbsp;&nbsp;&nbsp; Добро пожаловать на наш сайт, посвященный отечественным IT-разработкам!</h3>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;Цель этого сайта - предоставить вам увлекательный и информативный обзор развития IT-отрасли в России. Мы стремимся привлечь ваше внимание к значимым компаниям, проектам и персонажам в отечественной IT-сфере, а также показать вам потрясающие инновационные продукты, созданные на основе отечественных технологий.
+<h5 align="center">
+Здесь вы найдете разделы, которые охватывают различные аспекты отечественных IT-разработок:
+</h5></text>
+<div class="wrapper">	
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="p1.html" class = "card">
+	<div class="info">
+
+ На странице "История развития IT-индустрии в России" мы расскажем вам об основных этапах развития IT-отрасли в нашей стране, а также представим значимые компании, проекты и персонажей, которые оказали влияние на ее становление.</div>
+</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="p2.html" class = "card">
+	<div class="info">
+ Раздел "Технологии и инструменты" даст обзор основных технологий и инструментов, используемых в отечественных IT-разработках. Вы узнаете о специализированных языках программирования и платформах, разработанных в России. Также будут представлены  продукты и сервисы, созданные на основе отечественных технологий.</div>
+</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="p3.html" class = "card">
+	<div class="info">
+
+ Если вас интересует образование и карьера в IT, то раздел "Образование и карьера в IT" даст вам полезную информацию о доступных в России образовательных программах и курсах в области IT-разработки. Вы также найдете советы по выбору профессии и карьерному росту в отечественной IT-индустрии.</div>
+</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="p4.html" class = "card">
+	<div class="info">
+  В разделе "Новости и события" мы предлагаем вам быть в курсе последних новостей и событий, происходящих в отечественной IT-индустрии. Здесь вы найдете обзоры успешных проектов и компаний, созданных в России, а также информацию о мероприятиях, связанных с IT-разработкой, которые проходят в нашей стране.</div>
+</a> 	
+</div>
+<text>
+&nbsp;&nbsp;&nbsp;&nbsp;Наш сайт не только предоставляет обзор и информацию, но и служит источником вдохновения и мотивации. Он отражает богатое наследие и потенциал отечественных IT-разработок, демонстрирует, насколько разнообразна и успешна IT-индустрия в России.
+</text>
+</div>
+</div>
+<div class="scroll"></div>
+<div class="bottom-left"> <a href="#block0"> <img src="up.png" border="0", width="35" hight="35"> </a></div>
+	
+<div class="kol"> <text_kol style="left: 15%; "> Все права защищены ©️ 2023  <br>
+Подписаться на новости: <input type="email" id="email" name="email" placeholder="Введите email">
+<button type="submit"> <img src ="submit.png" alt="Отправить" width="15px" height="13px"> </button>
+ </text_kol> <text_kol style="left: 60%; "> 
+Контакты: +7(000)000-00-00 </text_kol> 
+</div>
+
+</body>
+</html>

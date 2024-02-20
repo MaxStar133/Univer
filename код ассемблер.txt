@@ -1,0 +1,44 @@
+.model small
+.stack 100h
+
+.data
+; define struct "Book"
+; size of Book = 10 bytes
+Book STRUC
+author_name db 50 DUP (?) ; 50 characters for author name
+book_title db 50 DUP (?) ; 50 characters for book title
+page_count dw ? ; 2 bytes for page count
+price dw ? ; 2 bytes for price
+Book ENDS
+
+; array of 10 Book structures
+B Book <"f", "f", 2, 1100>, <"a", "a", 3, 1100>, <"d", "d", 4, 1100>, <"f", "f", 300, 1100>, <"b", "b", 300, 1100>, <"q", "q", 300, 1100>, <"l", "l", 300, 1100>, <"e", "e", 300, 1100>, <"k", "k", 300, 1100>, <"n", "n", 300, 1100>
+
+.code
+ORG 100h
+start:
+mov ax, @data ; set AX to data segment
+mov DS, AX ; set DS to point to data segment
+
+xor DI, DI ; null DI register, DI will store the count of books with more than 200 pages
+
+; loop through each book in the array
+mov CX, 10 ; set CX to the number of books in the array
+mov SI, OFFSET B ; set SI to point to the beginning of the array
+
+iterate:
+mov AX, [SI + Book.page_count] ; load the page count of the current book
+cmp AX, 200 ; compare with 200 pages
+jbe not_more_than_200 ; jump if less than or equal to 200 pages
+
+inc DI ; increment DI if more than 200 pages
+
+not_more_than_200:
+add SI, TYPE Book ; move to the next book in the array
+loop iterate ; continue the loop until all books are checked
+
+; Now, DI contains the count of books with more than 200 pages
+ mov ah, 4Ch 
+INT 21h ; you may want to use DI for further processing or output
+
+END start
